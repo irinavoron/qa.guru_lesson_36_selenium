@@ -45,8 +45,10 @@ wait = WebDriverWait(driver, timeout=10)
 search_field = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[name=q]')))
 search_field.send_keys('selene yashaka', Keys.ENTER)
 
-search_result = wait.until(EC.visibility_of_element_located(
-    (By.CSS_SELECTOR, '[data-test-id=mainline-result-web]:nth-of-type(1) a')
-)
+search_result = wait.until(
+    EC.visibility_of_element_located(
+        (By.CSS_SELECTOR, '[data-test-id=mainline-result-web]:nth-of-type(1) a')
+    )
 )
 search_result.click()
+
